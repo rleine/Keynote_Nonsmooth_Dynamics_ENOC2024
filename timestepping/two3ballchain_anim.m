@@ -1,7 +1,10 @@
-function F = two3ballchain_anim(sys,t1,q1,t2,q2,aviname,antialias)
+function F = two3ballchain_anim(sys,t1,q1,t2,q2,aviname)
 % two3ballchain_anim.m: animation file for sys_3ballchain.m
 %
-% Remco Leine
+% makes one video with two simulations:
+% top = simulation 1, bottom = simulation 2
+%
+% Remco Leine, 2024
 
 scaling = 2;
 midxpos = 10;
@@ -14,7 +17,7 @@ n = 3;
 q1 = scaling*q1 + midxpos;
 q2 = scaling*q2 + midxpos;
 
-t = t1; %This is questionable for two datasets!!!
+t = t1; %This demands that t1 = t2, which is not exactly fulfilled
 
 if nargin<6, aviname = 'test.avi'; end
 if nargin<7, antialias = false; end
@@ -27,7 +30,6 @@ tE = t(N);
 frames = (tE-t0)*framespersecond/acceleration;
 K = floor(N/frames);
 
-%scrsz = get(0,'ScreenSize');
 scrsz = [1 1 1920 1200];
 fig = figure('Position',[1 scrsz(4)/2 scrsz(3)/2 scrsz(4)/2])
 set(fig,'Color','w');
@@ -60,28 +62,19 @@ text(midxpos,y1 - 2*R,'$\Delta t = 0.001$','Interpreter','latex','FontSize',30);
 text(midxpos,y2- 2*R,'$\Delta t = 0.001005$','Interpreter','latex','FontSize',30);
 
 for i=1:K:N  
- x1 = q1(1:n,i);
- x2 = q2(1:n,i);
+  x1 = q1(1:n,i);
+  x2 = q2(1:n,i);
  
- circlefun('draw',balls1(1),x1(1),y1,R,'r');
- circlefun('draw',balls1(2),x1(2),y1,R,'magenta');
- circlefun('draw',balls1(3),x1(3),y1,R,'b');
+  circlefun('draw',balls1(1),x1(1),y1,R,'r');
+  circlefun('draw',balls1(2),x1(2),y1,R,'magenta');
+  circlefun('draw',balls1(3),x1(3),y1,R,'b');
  
- circlefun('draw',balls2(1),x2(1),y2,R,'r');
- circlefun('draw',balls2(2),x2(2),y2,R,'magenta');
- circlefun('draw',balls2(3),x2(3),y2,R,'b');
+  circlefun('draw',balls2(1),x2(1),y2,R,'r');
+  circlefun('draw',balls2(2),x2(2),y2,R,'magenta');
+  circlefun('draw',balls2(3),x2(3),y2,R,'b');
  
-% set(time,'String',['t = ',num2str(t(i))]);
+  F = getframe(gca);   
  
-  if i==1, F = getframe(gca); end
-  if antialias
-     myaa(2)
-     F = getframe(gcf);
-     close(gcf);
-  else
-     F = getframe(gca);   
-  end 
-  
   writeVideo(v,F);
 end
 close(fig)
