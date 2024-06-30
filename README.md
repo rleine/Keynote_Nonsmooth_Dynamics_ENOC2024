@@ -2,7 +2,7 @@
 
 This repository contains all MATLAB files of the simulations in the keynote lecture "Nonsmooth Dynamics" being presented at the 11th European Nonlinear Dynamics Conference, [ENOC 2024](https://enoc24.dryfta.com/) on 26.07.2024 in Delft. The slides are available [here](https://github.com/rleine/Keynote_Nonsmooth_Dynamics_ENOC2024/blob/e18074d49e25af3a88f3b7d47dc301cd00f51257/Leine%20-%20Nonsmooth%20Dynamics%20-%20Keynote%20ENOC%202024.pdf).
 
-Please feel free to use the codes for your own work (the attached [license](https://github.com/rleine/Keynote_Nonsmooth_Dynamics_ENOC2024/blob/main/license.txt) applies). If you use the codes for simulations in your own publications, then I kindly request to cite the following publications:
+Please feel free to use the codes for your own work (the attached [license](https://github.com/rleine/Keynote_Nonsmooth_Dynamics_ENOC2024/blob/main/license.txt) applies). I kindly request to cite the following publications:
 
 [Leine, R.I. and Nijmeijer, H.: Dynamics and Bifurcations of Non-Smooth Mechanical Systems, 
 Lecture Notes in Applied and Computational Mechanics Vol. 18, Berlin Heidelberg New-York, Springer-Verlag, 2004.](https://link.springer.com/book/10.1007/978-3-540-44398-8)
