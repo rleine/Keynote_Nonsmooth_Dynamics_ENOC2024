@@ -12,6 +12,8 @@ Nonlinear Analysis: Hybrid Systems, 52, 101469.](https://www.sciencedirect.com/s
 
 Moreover, a new book *Leine, R.I. "Introduction to Nonsmooth Dynamics* is to be published in 2026 and will cover all topics of the keynote lecture.
 
+To make the simulations, simply run the scripts run_simulations_block_on_belt.m and run_simulations_timestepping_methods.m in the two folders.
+
 Remco Leine, July 2024
 
 leine@inm.uni-stuttgart.de
