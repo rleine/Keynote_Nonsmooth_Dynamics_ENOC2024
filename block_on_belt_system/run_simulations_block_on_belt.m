@@ -1,7 +1,7 @@
 % Leine - Nonsmooth dynamics- Keynote ENOC 2024 Delft
 %
-% script to make figures a comparison of time integration methods
-% for the block on belt system with stick-slip motion
+% script to make figures of a comparison of time-integration methods
+% for the block-on-belt system with stick-slip motion
 %
 % Remco Leine, University of Stuttgart, 2024
 

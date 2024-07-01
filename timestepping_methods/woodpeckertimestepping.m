@@ -1,4 +1,7 @@
 function [t,q,u] = woodpeckertimestepping(t0,te,q0,u0,N)
+% Moreau timestepping scheme for the Woodpecker Toy
+%
+% Remco Leine, University of Stuttgart, 2024
 mM = 3e-4; JM = 5e-9; mS = 4.5e-3; JS = 7e-7; lM = 0.01; lG = 0.015; lS = 0.0201;   %system 
 rM = 0.0031; r0 = 0.0025; hM = 0.0058; hS = 0.02; grav = 9.81; cphi = 0.0056;       %parameters
 mu = 0.3; eN = [0.5;0;0]; r = 1e-4; tol = 1e-8;
